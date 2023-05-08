@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fietsweer instellingen</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Fietsweer instellingen</h1>
+		<form method="POST" action="/settings">
+			<div class="form-group">
+				<label for="max_temp">Maximale temperatuur:</label>
+				<input type="number" class="form-control" name="max_temp" id="max_temp" value="{{ max_temp }}" required>
+			</div>
+			<div class="form-group">
+				<label for="min_temp">Minimale temperatuur:</label>
+				<input type="number" class="form-control" name="min_temp" id="min_temp" value="{{ min_temp }}" required>
+			</div>
+			<div class="form-group">
+				<label for="max_wind_speed">Maximale windsnelheid (in m/s):</label>
+				<input type="number" class="form-control" step="0.1" name="max_wind_speed" id="max_wind_speed" value="{{ max_wind_speed }}" required>
+			</div>
+			<div class="form-group">
+				<label for="max_rain_chance">Maximale regenkans:</label>
+				<input type="number" class="form-control" name="max_rain_chance" id="max_rain_chance" value="{{ max_rain_chance }}" required>
+			</div>
+			<div class="form-group">
+				<label for="max_snow_chance">Maximale kans op sneeuw:</label>
+				<input type="number" class="form-control" name="max_snow_chance" id="max_snow_chance" value="{{ max_snow_chance }}" required>
+			</div>
+			<div class="form-group">
+				<label for="weather_location">Locatie voor weerpeiling:</label>
+				<input type="text" class="form-control" name="weather_location" id="weather_location" value="{{ weather_location }}" required>
+			</div>
+			<div class="form-group">
+				<label for="weather_time">Tijdstip voor weerpeiling:</label>
+				<input type="time" class="form-control" name="weather_time" id="weather_time" value="{{ weather_time }}" required>
+			</div>
+			<button type="submit" class="btn btn-primary">Opslaan</button>
+		</form>
+	</div>
+</body>
+</html>
